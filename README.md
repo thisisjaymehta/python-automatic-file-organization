@@ -15,6 +15,7 @@ Automatically organize files to different folders based on its types
 1. As of now, dowload the automate.py from this github repo
 2. And Run it (as simple as that)
 >Dont forget to change the folder path to your own folder
+
 >Compatibility: Definitely works on Windows, cause I made it in Windows
 
 ### How to modify folder names and file extensions
