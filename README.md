@@ -33,8 +33,8 @@ DIR_TYPE={
     "Package":["exe",'ini'],
     "Torrent":["torrent"],
 	
-	#and the new one
-	"Application":["deb", "xip"]
+    #and the new one
+    "Application":["deb", "xip"]
 }
 
 ```
