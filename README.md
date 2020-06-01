@@ -3,9 +3,10 @@ Automatically organize files to different folders based on its types
 
 ## Features
 - Organise files based on its types to folders
+- Works as 'always on process' so new files are organised as soon as they are moved / created inside folder
 
 ### Adding Soon
-- Making script to work in background as always on process, so that as soon as new file is added to folder, it will be moved to organised folder and you dont have to run py script maually (thinking of using watchdog to detect system change)
+- Making script to run at windows startup / log in and no console window, so that it can run always in background without console coming in you way.
 - Organising file two level deep to &lt;file_type&gt; --&gt; &lt;year&gt; --&gt; &lt;month&gt;
 >Eg: Applications -&gt; 2020 -&gt; May -&gt; VSCode.exe
 
@@ -13,8 +14,9 @@ Automatically organize files to different folders based on its types
 
 ### How to use
 1. As of now, dowload the automate.py from this github repo
-2. And Run it (as simple as that)
->Dont forget to change the folder path to your own folder
+2. Run it using console
+
+> Eg: `python automate.py C:\Users\jay76\Downloads\` or just `python automate.py` to organise current working directory
 
 >Compatibility: Definitely works on Windows, cause I made it in Windows
 
