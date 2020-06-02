@@ -4,19 +4,29 @@ Automatically organize files to different folders based on its types
 ## Features
 - Organise files based on its types to folders
 - Works as 'always on process' so new files are organised as soon as they are moved / created inside folder
+- Option for auto run at startup
 
 ### Adding Soon
-- Making script to run at windows startup / log in and no console window, so that it can run always in background without console coming in you way.
 - Organising file two level deep to &lt;file_type&gt; --&gt; &lt;year&gt; --&gt; &lt;month&gt;
+
 >Eg: Applications -&gt; 2020 -&gt; May -&gt; VSCode.exe
 
 >or Photos -> 2020 -> June -> IMG0001.jpg
 
-### How to use
-1. As of now, dowload the automate.py from this github repo
-2. Run it using console
+# How to use
+There are two ways you can use this code:
+### 1. Run one time only to organise a folder just once (manually)
+- Here you need to download `automate.pyw` and run it using `python automate.pyw <path to dir>` command, where `<path to dir>` is path to directory which you want to organise
+- Once all files are organised and you want to stop excecuting the script press `CTRL + C` to stop the script and you are done.
+- Then you can repeat same procedure for some other folder if you want
 
-> Eg: `python automate.py C:\Users\jay76\Downloads\` or just `python automate.py` to organise current working directory
+### 2. Run as always on service and auto run at startup
+- In this mode, script will keep running in background and automatically organise current files and new files that will come in future
+- To achieve this there are different steps for different OS (because it include making a shell script for Unix environment or Batch File for Windows)
+	- First store the `automate.pyw` somewhere nice and cozy on your computer (for ex in Documents)
+	- Then make a script file which calls this pyw (File for windows is already included, follow instructions in file)
+	- Then move the file to startup folder so that it is executed as soon as computer starts
+	>For windows open run and enter `shell:startup`, which will open startup folder. Move your bat file there and then it will automatically run at startup
 
 >Compatibility: Definitely works on Windows, cause I made it in Windows
 

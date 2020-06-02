@@ -13,7 +13,7 @@
           Current Working Directory will be used
       
     Example
-        python fileorganiser.py C:\\Users\\Admin\\OneDrive\\Pictures
+        python automate.pyw <path_to_dir>
 
 """
 
@@ -53,7 +53,15 @@ def movefile(file_name,dir_type):
         dir_location=os.path.join(PATH,dir_type)
         if not os.path.exists(dir_location):
             os.mkdir(dir_location)
-        shutil.move(file_name,dir_location)
+        original_filename = file_name
+        file_name = os.path.basename(file_name)
+        if os.path.exists(os.path.join(dir_location, file_name)):
+            i = 1
+            splited_text=os.path.basename(file_name).split('.')
+            while os.path.exists(os.path.join(dir_location, splited_text[0]+str(i)+"."+splited_text[1])):
+                i += 1
+            file_name = splited_text[0] + str(i) + "."  + splited_text[1]
+        shutil.move(original_filename,os.path.join(dir_location, file_name))
     except:
         time.sleep(5)
         organize()
@@ -83,7 +91,7 @@ def organize(event = None):
                 movefile(os.path.join(PATH,file_name), "Other")
                 
 
-if __name__ == "__main__":
+if __name__ == "__main__":    
     
     organize()
     
@@ -96,7 +104,7 @@ if __name__ == "__main__":
     my_event_handler.on_created = organize
     my_event_handler.on_modified = organize
     
-    go_recursively = True
+    go_recursively = False
     my_observer = Observer()
     my_observer.schedule(my_event_handler, PATH, recursive=go_recursively)
 
