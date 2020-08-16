@@ -34,8 +34,8 @@ DIR_TYPE={
     "Video":['mp4','srt','mkv','3gp'],
     "Package":['exe','ini'],
     "Torrent":['torrent'],
-    "SQL":['sql']
-    
+    "SQL":['sql'],
+    "SKIP":['crdownload', 'fdmdownload'],
     #All uncatogerised file extensions will go in 'Other' folder
 }
 
@@ -85,6 +85,8 @@ def organize(event = None):
         splited_text=file_name.split('.')
         if len(splited_text)>1:
             ext=splited_text[-1].lower()
+            if file_types[ext] == "SKIP":
+                continue
             if ext in file_types:
                 movefile(os.path.join(PATH,file_name),file_types[ext])
             else:
