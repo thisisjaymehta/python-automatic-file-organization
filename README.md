@@ -23,7 +23,7 @@ There are two ways you can use this code:
 ### 2. Run as always on service and auto run at startup
 - In this mode, script will keep running in background and automatically organise current files and new files that will come in future
 - To achieve this there are different steps for different OS (because it include making a shell script for Unix environment or Batch File for Windows)
-	- First store the `automate.pyw` somewhere nice and cozy on your computer (for ex in Documents)
+	- First store the `automate.pyw` somewhere nice and cozy on your computer (for example in Documents)
 	- Then make a script file which calls this pyw (File for windows is already included, follow instructions in file)
 	- Then move the file to startup folder so that it is executed as soon as computer starts
 	>For windows open run and enter `shell:startup`, which will open startup folder. Move your bat file there and then it will automatically run at startup
@@ -46,9 +46,11 @@ DIR_TYPE={
     "Video":['mp4','srt','mkv','3gp'],
     "Package":["exe",'ini'],
     "Torrent":["torrent"],
-	
+    "SKIP":["crdownload, fdmdownload"],
     #and the new one
     "Application":["deb", "xip"]
 }
 
 ```
+
+> To prevent the moving of temporary file like `.crdownload` and `.fdmdownload` files and other downloading files add such extensions to `SKIP` list in `DIR_TYPE`
