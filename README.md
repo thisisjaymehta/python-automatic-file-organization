@@ -46,7 +46,7 @@ DIR_TYPE={
     "Video":['mp4','srt','mkv','3gp'],
     "Package":["exe",'ini'],
     "Torrent":["torrent"],
-    "SKIP":["crdownload, fdmdownload"],
+    "SKIP":["crdownload", "fdmdownload"],
     #and the new one
     "Application":["deb", "xip"]
 }
